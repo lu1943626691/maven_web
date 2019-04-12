@@ -1,0 +1,31 @@
+package com.baizhi.service.impl;
+
+import com.baizhi.dao.StudentDao;
+import com.baizhi.entity.Student;
+import com.baizhi.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.List;
+
+@Service
+public class StudentServiceImpl implements StudentService {
+    @Autowired
+    private StudentDao studentDao;
+
+
+    @Override
+    public List<Student> selectAll() {
+        return studentDao.selectAll();
+    }
+
+    @Override
+    public void delete(int ids[]) {
+        studentDao.delete(ids);
+    }
+
+    @Override
+    public void update(Student student) {
+        studentDao.update(student);
+    }
+}

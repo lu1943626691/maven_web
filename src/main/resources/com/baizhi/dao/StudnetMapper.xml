@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.baizhi.dao.StudentDao">
+    <select id="selectAll" resultType="com.baizhi.entity.Student">
+        select *
+        from a_student
+
+    </select>
+    <!-- <update id="delete">
+         update a_student set id_Delete=1 where stu_id IN
+         <foreach collection="array" open="(" close=")" item="id" separator=",">#{id}</foreach>
+     </update>-->
+    <delete id="delete">
+        UPDATE a_student SET id_Delete=1 where stu_id IN
+        <foreach collection="array" open="(" close=")" separator="," item="id">#{id}</foreach>
+    </delete>
+    <update id="update">
+        update a_student
+        set stu_name=#{stu_name},
+            stu_age=#{stu_age},
+            stu_gender=#{stu_gender}where
+            stu_id=
+            #{stu_id}
+    </update>
+
+</mapper>
