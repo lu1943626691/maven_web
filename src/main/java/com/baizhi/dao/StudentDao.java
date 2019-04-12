@@ -9,6 +9,6 @@ public interface StudentDao {
     public List<Student> selectAll();
 //test2
     public void delete(int ids[]);
-
+//test3
     public void update(Student student);
 }
