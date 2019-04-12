@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface StudentDao {
     //注水
+    //特殊t
     public List<Student> selectAll();
 //test2
     public void delete(int ids[]);
