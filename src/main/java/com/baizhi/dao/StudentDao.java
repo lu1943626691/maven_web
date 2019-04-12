@@ -7,7 +7,7 @@ import java.util.List;
 public interface StudentDao {
     //注水
     public List<Student> selectAll();
-
+//test2
     public void delete(int ids[]);
 
     public void update(Student student);
